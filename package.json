@@ -1,0 +1,50 @@
+{
+  "name": "highwall",
+  "version": "0.1.0",
+  "description": "<div> which fits viewport's height. Mobile browser compatible 100vh.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yamamotok/react-floordiv.git"
+  },
+  "homepage": "https://github.com/yamamotok/react-floordiv",
+  "main": "dist/HighWall.js",
+  "types": "dist/HighWall.d.ts",
+  "scripts": {
+    "prepare": "npm run prettier && npm run tslint",
+    "build": "rimraf dist && tsc -p tsconfig.build.json && node postbuild.js",
+    "test": "react-scripts test",
+    "prettier": "prettier --ignore-path .gitignore --write \"src/**/*.ts\" \"src/**/*.tsx\" \"src/**/*.css\" \"./**/*.json\" \"./**/*.js\"",
+    "tslint": "tslint -c tslint.json -p tsconfig.json --fix"
+  },
+  "author": "Keisuke Yamamoto <keisuke@modelhouse.tech>",
+  "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "rxjs": "^6.4.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.38",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@types/shelljs": "^0.8.7",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
+    "rimraf": "^3.0.2",
+    "shelljs": "^0.8.4",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.2.0",
+    "typescript": "^3.7.5"
+  }
+}
