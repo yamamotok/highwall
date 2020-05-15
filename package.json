@@ -1,22 +1,29 @@
 {
   "name": "highwall",
-  "version": "0.1.0",
-  "description": "<div> which fits viewport's height. Mobile browser compatible 100vh.",
+  "version": "0.1.1",
+  "description": "HighWall is a React component which fits viewport's height. It is like a mobile browser compatible 100vh div.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:yamamotok/react-floordiv.git"
+    "url": "https://github.com/yamamotok/highwall.git"
   },
-  "homepage": "https://github.com/yamamotok/react-floordiv",
+  "files": [
+    "dist/**/*"
+  ],
+  "homepage": "https://github.com/yamamotok/highwall",
   "main": "dist/HighWall.js",
   "types": "dist/HighWall.d.ts",
   "scripts": {
-    "prepare": "npm run prettier && npm run tslint",
+    "prepare": "npm run build",
     "build": "rimraf dist && tsc -p tsconfig.build.json && node postbuild.js",
     "test": "react-scripts test",
+    "lint": "npm run prettier && npm run tslint",
     "prettier": "prettier --ignore-path .gitignore --write \"src/**/*.ts\" \"src/**/*.tsx\" \"src/**/*.css\" \"./**/*.json\" \"./**/*.js\"",
     "tslint": "tslint -c tslint.json -p tsconfig.json --fix"
   },
-  "author": "Keisuke Yamamoto <keisuke@modelhouse.tech>",
+  "author": {
+    "name": "Keisuke Yamamoto",
+    "email": "keisuke@modelhouse.tech"
+  },
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
