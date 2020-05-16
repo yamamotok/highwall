@@ -84,8 +84,10 @@ export const HighWall: React.FC<HighWallProps> = (props) => {
   function getDebugInfo() {
     return {
       styleHeight: height,
-      innerHeight: window.innerHeight,
+      clientWidth: document.documentElement.clientWidth,
+      clientHeight: document.documentElement.clientHeight,
       innerWidth: window.innerWidth,
+      innerHeight: window.innerHeight,
     };
   }
 
