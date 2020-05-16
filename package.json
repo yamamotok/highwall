@@ -1,6 +1,6 @@
 {
   "name": "highwall",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "HighWall is a React component which fits viewport's height. It is like a mobile browser compatible 100vh div.",
   "repository": {
     "type": "git",
@@ -24,6 +24,13 @@
     "name": "Keisuke Yamamoto",
     "email": "keisuke@modelhouse.tech"
   },
+  "keywords": [
+    "typescript",
+    "react",
+    "mobile",
+    "safari",
+    "100vh"
+  ],
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
