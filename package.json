@@ -29,7 +29,7 @@
     "react",
     "mobile",
     "safari",
-    "vh100"
+    "100vh"
   ],
   "license": "MIT",
   "dependencies": {
