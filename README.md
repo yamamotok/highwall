@@ -48,7 +48,7 @@ This sample will set the height to `min-height` instead of `height`.
 import {HighWall, Fitter} from 'HighWall';
 
 const fitter: Fitter = viewportHeight => ({minHeight: viewportHeight});
-<HighWall styleCreator={fitter}>
+<HighWall fitter={fitter}>
 </HighWall>
 ```
 
