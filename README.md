@@ -6,7 +6,7 @@ HighWall - A React Component
 CSS `height: 100vh` is useful when trying to implement native-app-like mobile web application.
 However, on mobile Safari for example, it does not work as expected.
 
-This "HighWall" is a react component which realizes `height: 100vh` by measuring viewport's height
+This "HighWall" is a React component which realizes `height: 100vh` by measuring viewport's height
 every window size change.
 
 ## React version
@@ -16,10 +16,10 @@ Since this component uses `hook` internally, React version has to be greater tha
 ## How to use
 
 Green will fill up the viewport. 
-Of course you can set your own class like `<HighWall className="myClass">`.
+Of course, you can set your own class like `<HighWall className="myClass">`.
 
 ```typescript jsx
-import {HighWall} from 'react-floordiv';
+import {HighWall} from 'HighWall';
 
 const Page: React.FC = () => {
   return (
@@ -45,7 +45,7 @@ This can be realized by setting `Fitter` function in props.
 This sample will set the height to `min-height` instead of `height`.
 
 ```typescript jsx
-import {HighWall, Fitter} from 'react-floordiv';
+import {HighWall, Fitter} from 'HighWall';
 
 const fitter: Fitter = viewportHeight => ({minHeight: viewportHeight});
 <HighWall styleCreator={fitter}>
