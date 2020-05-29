@@ -52,16 +52,10 @@ const fitter: Fitter = viewportHeight => ({minHeight: viewportHeight});
 </HighWall>
 ```
 
-This component has `throttle` to avoid too frequent rerender.
-The default value is 150 milliseconds.
-
-```typescript jsx
-<HighWall throttle={1000}> // this will limit height update to every 1 second.
-```
 
 ## Thanks
 
-This component was inspired by great repos and articles, especially:
+This component is inspired by great repos and articles, especially:
 - [react-div-100vh](https://github.com/mvasin/react-div-100vh)
 - [Addressing the iOS Address Bar in 100vh Layouts](https://medium.com/@susiekim9/how-to-compensate-for-the-ios-viewport-unit-bug-46e78d54af0d)
 
