@@ -7,7 +7,10 @@ const vh = 500;
 
 describe('HighWall', () => {
   function setDocumentClientHeight(height: number) {
-    Object.defineProperty(document.documentElement, 'clientHeight', { value: height, configurable: true });
+    Object.defineProperty(document.documentElement, 'clientHeight', {
+      value: height,
+      configurable: true,
+    });
   }
 
   beforeEach(() => {
@@ -35,8 +38,7 @@ describe('HighWall', () => {
   });
 
   it('updates height when window was resized', async (done) => {
-    const throttle = 50;
-    const rendered = render(<HighWall throttle={throttle} />);
+    const rendered = render(<HighWall />);
     const element = rendered.getByTestId('highwall-root');
 
     const newHeight = 100;
@@ -46,29 +48,10 @@ describe('HighWall', () => {
         window.dispatchEvent(new Event('resize'));
         setTimeout(() => {
           resolve();
-        }, throttle + 10);
+        }, 10);
       });
     });
     expect(element.style.height).toBe(`${newHeight}px`);
-    done();
-  });
-
-  it('does not update height because of frequency limit', async (done) => {
-    const throttle = 500;
-    const rendered = render(<HighWall throttle={throttle} />);
-    const element = rendered.getByTestId('highwall-root');
-
-    const newHeight = 100;
-    await act(async () => {
-      return new Promise<void>((resolve) => {
-        setDocumentClientHeight(newHeight);
-        window.dispatchEvent(new Event('resize'));
-        setTimeout(() => {
-          resolve();
-        }, throttle / 2);
-      });
-    });
-    expect(element.style.height).not.toBe(`${newHeight}px`);
     done();
   });
 

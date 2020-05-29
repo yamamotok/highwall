@@ -5,7 +5,7 @@ import './Hud.css';
 
 interface Props {
   position: string;
-  values?: Record<string, any>;
+  values?: Record<string, string | number | undefined>;
 }
 
 /**
