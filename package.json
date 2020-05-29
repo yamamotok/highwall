@@ -1,6 +1,6 @@
 {
   "name": "highwall",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "HighWall is a React component which fits viewport's height. It is like a mobile browser compatible 100vh div.",
   "repository": {
     "type": "git",
