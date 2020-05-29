@@ -1,15 +1,8 @@
 import classNames from 'classnames';
 import React, { CSSProperties, useEffect, useState } from 'react';
-import { fromEvent } from 'rxjs';
-import { bufferTime, filter } from 'rxjs/operators';
 
 import './HighWall.css';
 import { Hud } from './Hud';
-
-/**
- * Default throttle milliseconds.
- */
-export const DEFAULT_THROTTLE_MS = 150;
 
 /**
  * Function which can override measured height installation.
@@ -54,11 +47,6 @@ interface HighWallProps {
   debug?: boolean | { position: HudPosition };
 
   /**
-   * Throttle milliseconds.
-   */
-  throttle?: number;
-
-  /**
    * Height fitter.
    */
   fitter?: Fitter;
@@ -100,28 +88,20 @@ export const HighWall: React.FC<HighWallProps> = (props) => {
 
   // Effect for height adjustment
   useEffect(() => {
-    const throttle = props.throttle === undefined ? DEFAULT_THROTTLE_MS : props.throttle;
     const adjustHeight = () => setHeight(getViewportHeight());
-
-    // Listen to 'resize' event.
-    const resizeEvent = fromEvent(window, 'resize')
-      .pipe(bufferTime(throttle))
-      .pipe(filter((e) => e.length > 0));
-    const subscription = resizeEvent.subscribe(() => {
-      adjustHeight();
-    });
-
-    // Do the initial adjustment.
     adjustHeight();
-
-    // Return destructor
-    return () => {
-      subscription.unsubscribe();
+    window.addEventListener('resize', adjustHeight);
+    return (): void => {
+      window.removeEventListener('resize', adjustHeight);
     };
-  }, [props.throttle]);
+  }, [setHeight]);
 
   return (
-    <div data-testid="highwall-root" className={classNames('HighWall', props.className)} style={getOptimizedStyle()}>
+    <div
+      data-testid="highwall-root"
+      className={classNames('HighWall', props.className)}
+      style={getOptimizedStyle()}
+    >
       {props.children}
       {hudPos && <Hud position={hudPos} values={getDebugInfo()} />}
     </div>
