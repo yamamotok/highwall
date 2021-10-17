@@ -40,6 +40,8 @@ These settings will show debug information on head-up display.
 <HighWall debug={{ position: HudPosition.rightTop }}>
 ```
 
+![image](https://user-images.githubusercontent.com/2731953/137612343-86409a95-b6b0-483c-860e-e247aa1865b1.png)
+
 ## Advanced
 
 Maybe sometimes you want to set viewport's height to `min-height` or other properties.
