@@ -37,7 +37,7 @@ describe('HighWall', () => {
     expect(element.style.height).toBe(`${vh}px`);
   });
 
-  it('updates height when window was resized', async (done) => {
+  it('updates height when window was resized', async () => {
     const rendered = render(<HighWall />);
     const element = rendered.getByTestId('highwall-root');
 
@@ -52,7 +52,6 @@ describe('HighWall', () => {
       });
     });
     expect(element.style.height).toBe(`${newHeight}px`);
-    done();
   });
 
   it('works correct with custom fitter function', () => {
