@@ -4,6 +4,7 @@
 
 # out
 /dist
+/pack
 /coverage
 
 # libraries

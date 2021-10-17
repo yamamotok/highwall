@@ -1,6 +1,9 @@
 HighWall - A React Component
 ===============================
 
+Since version 0.4.0, this is an ES module (bundled with [Rollup](https://rollupjs.org/)),
+which should work fine with [Vite](https://vitejs.dev/) and others.
+
 ## Summary
 
 CSS `height: 100vh` is useful when trying to implement native-app-like mobile web application.
@@ -34,8 +37,10 @@ These settings will show debug information on head-up display.
 
 ```typescript jsx
 <HighWall debug={true}> // show in default position, leftBottom.
-<HighWall debug={position: 'rightBottom'}>
+<HighWall debug={{ position: HudPosition.rightTop }}>
 ```
+
+![image](https://user-images.githubusercontent.com/2731953/137612343-86409a95-b6b0-483c-860e-e247aa1865b1.png)
 
 ## Advanced
 
